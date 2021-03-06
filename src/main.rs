@@ -80,7 +80,7 @@ fn args() -> (PtySize, Vec<CString>) {
                 .takes_value(true)
                 .help("Sets the width of the pty")
                 .validator(|w| {
-                    w.parse::<u32>()
+                    w.parse::<u16>()
                         .map(|_| ())
                         .map_err(|_| "must be a number".to_string())
                 }),
@@ -92,7 +92,7 @@ fn args() -> (PtySize, Vec<CString>) {
                 .takes_value(true)
                 .help("Sets the height of the pty")
                 .validator(|w| {
-                    w.parse::<u32>()
+                    w.parse::<u16>()
                         .map(|_| ())
                         .map_err(|_| "must be a number".to_string())
                 }),
